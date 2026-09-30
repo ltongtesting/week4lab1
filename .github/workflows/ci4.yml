@@ -1,4 +1,4 @@
-name: Java CI Pipelines
+name: Java CI Pipeline
 
 on:
   push:
