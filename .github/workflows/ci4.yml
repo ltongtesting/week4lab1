@@ -22,7 +22,10 @@ jobs:
           cache: 'maven'
 
       - name: Test Missing Secret
-        run: echo "Secret value: ${{ secrets.MISSING_SECRET }}"
+        env:
+          MISSING_SECRET: ${{ secrets.MISSING_SECRET }}
+        run: |
+          echo "Secret value: $MISSING_SECRET"
 
       - name: Build, Resolve Dependencies, and Execute JUnit Tests
         run: mvn clean package
